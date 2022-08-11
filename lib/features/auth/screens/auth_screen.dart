@@ -59,7 +59,7 @@ class _AuthScreenState extends State<AuthScreen> {
             Container(
               width: 400,
               padding: const EdgeInsets.all(10),
-              child: ElevatedButton(onPressed: () {}, child: Text('Далее')),
+              child: ElevatedButton(onPressed: () {}, child: Text('Войти')),
             ),
           ]),
         ),
