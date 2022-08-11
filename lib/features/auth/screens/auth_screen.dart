@@ -24,9 +24,47 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   // TODO(task): Implement Auth screen.
+  TextEditingController loginController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    // throw UnimplementedError();
+    return Scaffold(
+        body: Center(
+      child: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Form(
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Container(
+                width: 400,
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  controller: loginController,
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.person),
+                    labelText: 'Логин',
+                  ),
+                )),
+            Container(
+                width: 400,
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  obscureText: true,
+                  controller: passwordController,
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.key),
+                    labelText: 'Пароль',
+                  ),
+                )),
+            Container(
+              width: 400,
+              padding: const EdgeInsets.all(10),
+              child: ElevatedButton(onPressed: () {}, child: Text('Далее')),
+            ),
+          ]),
+        ),
+      ),
+    ));
   }
 
   void _pushToChat(BuildContext context, TokenDto token) {
